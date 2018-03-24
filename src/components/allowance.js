@@ -36,9 +36,9 @@ class Allowance extends Component {
     return (
       <div style={divMargin}>
         <form>
-          {this.props.name}'s Weekly Allowance<br/>
-          Allowance:<input type="number" name="allow" placeholder="$$$" onChange={this.handleAllowance}></input>
-        <p>  Pay Day: <select name="day" onChange={this.handlePayday}>
+          <h2>{this.state.name}'s Weekly Allowance</h2>
+          <p>Allowance:<input type="number" name="allow" placeholder="$$$" onChange={this.handleAllowance}></input></p>
+          <p>Pay Day: <select name="day" onChange={this.handlePayday} style={backColor}>
             <option>Pick A Day</option>
             <option value={1}>Sunday</option>
             <option value={2}>Monday</option>
