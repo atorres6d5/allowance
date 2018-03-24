@@ -16,7 +16,11 @@ class ParentView extends Component {
       // ],
       kids:this.props.user ? [this.props.user.users.children[0]] : [],
 
+<<<<<<< HEAD
       pendingRequest:this.props.user ? this.props.user.users.children[0].requests.length : '',
+=======
+      pendingRequest:[this.props.user.users.children[0].requests.length],
+>>>>>>> parent of c829fcc... pully
       seePending:false
     }
   }
@@ -71,11 +75,11 @@ class ParentView extends Component {
                     <div className='allowanceInfo'>
                         {/* <i className="far fa-money-bill-alt"></i> */}
                         <img src={pigBank} height="35"/>
-                        <p> ${kid.account.availableBalance}</p>
+                        <p> ${kid.accountBal}</p>
                     </div>
                     <div className='allowanceInfo'>
                       <i className="far fa-money-bill-alt"></i>
-                      <p>${kid.allowances[0].amount}</p>
+                      <p>${kid.weeklyAllow}</p>
                     </div>
 
                   </div>
