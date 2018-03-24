@@ -48,6 +48,7 @@ class ParentView extends Component {
             <br/>
             <h3>Current Parent Balance:</h3>
             <h1>${this.state.mainBalance}</h1>
+            <h3><i class="fas fa-users" style={{fontSize:"2em"}}></i></h3>
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
 

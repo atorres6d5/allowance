@@ -32,8 +32,6 @@ class App extends Component {
     localStorage.setItem("client_secret", "eb5f6rda6v0d1ld8y4fymkudo86gorrc47cj")
   }
 
-
-
   render() {
     return (
       <div>
@@ -43,18 +41,12 @@ class App extends Component {
           <h1>Allowance</h1>
         </div>
         {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
-<<<<<<< HEAD
         <ParentView state={this.state}/>
-=======
-        <ParentView />
-
->>>>>>> f526c4c795801654b475c784bf6b8eba39ccc4c5
         {/* <Allowance /> */}
 
       </div>
     );
   }
-
 }
 
 export default App;
