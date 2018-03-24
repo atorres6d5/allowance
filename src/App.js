@@ -8,6 +8,9 @@ import HandleReq from "./components/handleReq.js"
 import AddKid from "./components/addKid.js"
 import Allowance from "./components/allowance.js"
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
+
+
+
 class App extends Component {
   constructor(props){
     super(props)
@@ -39,8 +42,9 @@ class App extends Component {
           <h1>Allowance</h1>
         </div>
         {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
-        {/* <ParentView /> */}
-        <Allowance />
+        <ParentView />
+
+        {/* <Allowance /> */}
 
       </div>
     );
