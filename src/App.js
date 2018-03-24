@@ -39,8 +39,8 @@ class App extends Component {
           <h1>Allowance</h1>
         </div>
         {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
-        <ParentView />
-        {/* <Allowance /> */}
+        {/* <ParentView /> */}
+        <Allowance />
 
       </div>
     );

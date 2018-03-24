@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 
+const divMargin = {
+  margin: "20px"
+}
+
+const backColor = {
+  backgroundColor: "#999",
+  fontSize: "1.2em"
+}
+
+const buttonSize = {
+  fontSize: "1.2em"
+}
+
 class Allowance extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name:"Hon Solo",
+      name:"Ben",
       allowance:0,
       payDay:1
     }
@@ -21,11 +34,11 @@ class Allowance extends Component {
 
   render() {
     return (
-      <div>
+      <div style={divMargin}>
         <form>
-          {this.state.name}'s Weekly Allowance<br/>
-          Allowance:<input type="number" name="allow" placeholder="$$$" onChange={this.handleAllowance}></input>
-          Pay Day: <select name="day" onChange={this.handlePayday}>
+          <h2>{this.state.name}'s Weekly Allowance</h2>
+          <p>Allowance:<input type="number" name="allow" placeholder="$$$" onChange={this.handleAllowance}></input></p>
+          <p>Pay Day: <select name="day" onChange={this.handlePayday} style={backColor}>
             <option>Pick A Day</option>
             <option value={1}>Sunday</option>
             <option value={2}>Monday</option>
@@ -34,9 +47,9 @@ class Allowance extends Component {
             <option value={5}>Thursday</option>
             <option value={6}>Friday</option>
             <option value={7}>Saturday</option>
-          </select>
+          </select></p>
           <br/>
-          <button type="submit">Save Changes</button>
+          <button type="submit" style={buttonSize}>Save Changes</button>
         </form>
       </div>
     );

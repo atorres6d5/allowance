@@ -10,8 +10,8 @@ class ParentView extends Component {
     this.state = {
       mainBalance:6524,
       kids:[
-      {name:"Ben Kenobi", accountBal:200, weeklyAllow:15},
-      {name:"Leah SkyWalker", accountBal:75, weeklyAllow:20}
+      {name:"Ben", accountBal:200, weeklyAllow:15},
+      {name:"Leah", accountBal:175, weeklyAllow:20}
       ],
       pendingRequest:1,
       seePending:false
@@ -39,7 +39,8 @@ class ParentView extends Component {
           <div>
             {this.state.pendingRequest ? <div onClick={this.seePendingReq} className='pendingRequest'>{this.state.pendingRequest} </div> : ''}
             <br/>
-            <h3>Current Balance: ${this.state.mainBalance}</h3>
+            <h3>Current Parent Balance:</h3>
+            <h1>${this.state.mainBalance}</h1>
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
                 return (
