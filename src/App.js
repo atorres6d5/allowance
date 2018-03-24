@@ -7,49 +7,19 @@ import ViewRequest from './components/viewRequest.js'
 import HandleReq from "./components/handleReq.js"
 import AddKid from "./components/addKid.js"
 import Allowance from "./components/allowance.js"
-import axios from 'axios'
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
+
+
 
 class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      "user": '',
-      'userType':''
-
+      "user": accounts,
     }
   }
   componentWillMount = () =>{
     this.setLocalStorage()
-    this.getUserAccounts()
-  }
-
-  getUserAccounts = () => {
-    axios.get(`http://localhost:3000/api/users/1`).then(result => {
-      this.setState({
-        "user":result.data,
-        'userType':result.data.users.user_type,
-      })
-    })
-
-  }
-
-  switchUser =() => {
-    if(this.state.userType === 'parent'){
-      axios.get('http://localhost:3000/api/users/2').then(result => {
-        this.setState({
-            "user":result.data.users,
-            'userType':'child'
-        })
-        console.log("statley", this.state);
-      })
-
-    }
-    else{
-      this.setState({
-        'userType':'parent'
-      })
-    }
   }
 
   requestMoney = (request) => {
@@ -64,7 +34,6 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state.userType);
     return (
       <div>
 
@@ -72,10 +41,11 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
           <h1>Allowance</h1>
         </div>
-        {this.state.userType === 'parent' ? <ParentView user={this.state.user}/> : <Kids user={this.state.user} requestMoney={this.requestMoney}/> }
+        {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
+        <ParentView />
 
         {/* <Allowance /> */}
-        <button className='switchUserBtn' onClick={this.switchUser}>Switch Users</button>
+
       </div>
     );
   }

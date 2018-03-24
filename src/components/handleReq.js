@@ -1,9 +1,9 @@
 import React from 'react';
-import axios from 'axios'
+
 
 
 const handleYes = ( ) =>{
-  // axios.patch('http://localhost:3000/api/request/')
+  console.log("yes");
 }
 
 const handleNo = ( ) =>{
