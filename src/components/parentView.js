@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/parentView.css'
 import ViewRequest from './viewRequest.js'
+import Allowance from './allowance.js'
 const pigBank = require('../assets/pics/pigBank.png')
 const axios = require('axios')
 
@@ -10,8 +11,8 @@ class ParentView extends Component {
     this.state = {
       mainBalance:6524,
       kids:[
-      {name:"Ben", accountBal:200, weeklyAllow:15},
-      {name:"Leah", accountBal:175, weeklyAllow:20}
+      {name:"Ben", accountBal:200, weeklyAllow:15, payDay:3},
+      {name:"Leah", accountBal:175, weeklyAllow:20, payDay:6}
       ],
       pendingRequest:1,
       seePending:false
@@ -28,6 +29,12 @@ class ParentView extends Component {
   clickKid = (e) =>{
     let name = document.getElementById('kidName').innerHTML
     console.log(name);
+  }
+
+  handleClick = (callback)=>{
+    return (e)=>{
+      callback()
+    }
   }
 
 
@@ -48,9 +55,19 @@ class ParentView extends Component {
             <h1>${this.state.mainBalance}</h1>
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
+
+                const sendPost = ()=>{
+                  console.log(kid)
+                  return <Allowance
+                    name={kid.name}
+                    payDay={kid.payDay}
+                    allowance={kid.weeklyAllow}
+                  />
+                }
+
                 return (
-                  <div key={i} className='kidAllowance' onClick={this.clickKid}>
-                    <h2 id='kidName'>{kid.name}</h2>
+                  <div key={i} className='kidAllowance' onClick={this.handleClick(sendPost)}>
+                    <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
 
                         <img src={pigBank} height="35"/>

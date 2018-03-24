@@ -10,6 +10,11 @@ import Allowance from "./components/allowance.js"
 import axios from 'axios'
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f526c4c795801654b475c784bf6b8eba39ccc4c5
 class App extends Component {
   constructor(props){
     super(props)
