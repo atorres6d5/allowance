@@ -53,6 +53,7 @@ class ViewRequest extends Component {
               <th>Name</th>
               <th>Amount</th>
               <th style={maxWidth}>Memo</th>
+              <th>Authorize</th>
             </tr>
           </thead>
           <tbody>
