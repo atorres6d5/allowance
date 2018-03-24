@@ -8,7 +8,6 @@ form{
   font-size: 1rem;
 }
 form button{
-  background-color: red;
   border-radius: 4px;
 }
 
@@ -28,7 +27,7 @@ form div{
   border-radius: 4px;
 }
 input {
-  border:2px solid #2874af;
+  border:2px solid #4183c4;
 }
 .sendRequest{
   background-color: #2874af;;

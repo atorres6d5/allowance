@@ -14,17 +14,6 @@
   margin-left: 1rem;
 }
 
-.makeKidBtn{
-  color:white;
-  background-color:#2874af;
-  margin: 0 auto;
-  margin-top: 5rem;
-  width:70vw;
-  align-self: center;
-  padding:.5rem;
-  border-radius: 4px;
-}
-
 .parentContainer{
   text-align: center;
 }

@@ -3,21 +3,20 @@ import '../css/parentView.css'
 import ViewRequest from './viewRequest.js'
 import Allowance from './allowance.js'
 const pigBank = require('../assets/pics/pigBank.png')
-const axios = require('axios')
 
 class ParentView extends Component {
   constructor(props){
     super(props)
     this.state = {
       user:this.props.user,
-      mainBalance:this.props.user.users.account.availableBalance,
+      mainBalance:this.props.user ? this.props.user.users.account.availableBalance : '',
       // kids:[
       // {name:"Ben", accountBal:200, weeklyAllow:15, payDay:3},
       // {name:"Leah", accountBal:175, weeklyAllow:20, payDay:6}
       // ],
-      kids:[this.props.user.users.children[0]],
+      kids:this.props.user ? [this.props.user.users.children[0]] : [],
 
-      pendingRequest:this.props.user.users.children[0].requests.length,
+      pendingRequest:this.props.user ? this.props.user.users.children[0].requests.length : '',
       seePending:false
     }
   }
@@ -30,8 +29,7 @@ class ParentView extends Component {
   }
 
   clickKid = (e) =>{
-    let name = document.getElementById('kidName').innerHTML
-    console.log(name);
+    console.log(e.target);
   }
 
   handleClick = (callback)=>{
@@ -41,13 +39,10 @@ class ParentView extends Component {
   }
 
 
-
-  makeKidAccount = () => {
-    // make new kid accoutn
-  }
   render() {
   // this.state.user ? console.log(this.state.user.users.account.availableBalance) : '';
-  this.state.user ? console.log(this.state.kids) : '';
+  console.log('strying');
+  this.props ? console.log(this.props) : '';
     return (
 
       <div className='parentContainer'>
@@ -74,7 +69,7 @@ class ParentView extends Component {
                   <div key={i} className='kidAllowance' onClick={this.handleClick(sendPost)}>
                     <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
-
+                        {/* <i className="far fa-money-bill-alt"></i> */}
                         <img src={pigBank} height="35"/>
                         <p> ${kid.account.availableBalance}</p>
                     </div>
@@ -87,10 +82,8 @@ class ParentView extends Component {
                 )
               })}
             </div>
-            <div>
-              <button className='makeKidBtn' onClick={this.makeKidAccount}>New Kid Account</button>
-            </div>
           </div>
+
       }
 
       </div>
