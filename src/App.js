@@ -29,7 +29,7 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
         </div>
         <Kids user={this.state.user}/>
-        <ParentView />
+        {/* <ParentView /> */}
       </div>
     );
   }
