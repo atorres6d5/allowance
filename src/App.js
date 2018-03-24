@@ -46,9 +46,7 @@ class App extends Component {
 
     }
     else{
-      this.setState({
-        'userType':'parent'
-      })
+      this.getUserAccounts()
     }
   }
 

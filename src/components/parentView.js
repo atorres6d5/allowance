@@ -9,14 +9,9 @@ class ParentView extends Component {
     super(props)
     this.state = {
       user:this.props.user,
-      mainBalance:this.props.user ? this.props.user.users.account.availableBalance : '',
-      kids:this.props.user ? [this.props.user.users.children[0]] : [],
-
-      pendingRequest:this.props.user ? [this.props.user.users.children[0].requests.length] : [],
-
-      kids:this.props.user.users.children[0],
-
-
+      mainBalance:this.props.user.users ? this.props.user.users.account.availableBalance : '',
+      kids:this.props.user.users ? [this.props.user.users.children[0]] : [],
+      pendingRequest:this.props.user.users ? [this.props.user.users.children[0].requests.length] : [],
       seePending:false
     }
   }
@@ -45,7 +40,7 @@ class ParentView extends Component {
     // make new kid accoutn
   }
   render() {
-
+console.log(this.state);
     return (
 
       <div className='parentContainer'>
@@ -58,9 +53,9 @@ class ParentView extends Component {
             <h1>${this.state.mainBalance}</h1>
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
-
+                console.log(kid);
                 const sendPost = ()=>{
-                  console.log(kid)
+                  console.log(">>>>>",kid)
                   return <Allowance
                     name={kid.name}
                     payDay={kid.payDay}
@@ -69,16 +64,17 @@ class ParentView extends Component {
                 }
 
                 return (
+                  // {console.log();}
                   <div key={i} className='kidAllowance' onClick={this.handleClick(sendPost)}>
                     <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
 
                         <img src={pigBank} height="35"/>
-                        <p> ${kid.accountBal}</p>
+                        <p> ${kid.account.availableBalance}</p>
                     </div>
                     <div className='allowanceInfo'>
                       <i className="far fa-money-bill-alt"></i>
-                      <p>${kid.weeklyAllow}</p>
+                      <p>${kid.allowances[0].amount}</p>
                     </div>
 
                   </div>
