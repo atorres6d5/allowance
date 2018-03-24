@@ -5,7 +5,7 @@ class Kids extends Component {
     super(props)
     this.state={
       name:this.props.name,
-      progress:(this.props.account.availableBalance/this.props.goals[0].amount)*100,
+      progress:(this.props.account.availableBalance / this.props.goals[0].amount)*100,
       goal:this.props.goals[0].amount,
       balance:this.props.account.availableBalance,
       allowance:this.props.allowance.amount,

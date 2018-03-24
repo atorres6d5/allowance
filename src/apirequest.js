@@ -1,4 +1,4 @@
-export default accounts = {
+const accounts = {
     "accounts": [
         {
             "accountNickname": "My fav checking",
@@ -98,3 +98,4 @@ export default accounts = {
         }
     ]
 }
+export default accounts
