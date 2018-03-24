@@ -35,7 +35,7 @@ class ParentView extends Component {
 
       <div className='parentContainer'>
 
-        {this.state.seePending ? <ViewRequest/> :
+        {this.state.seePending ? <ViewRequest state={this.props.state}/> :
           <div>
             {this.state.pendingRequest ? <div onClick={this.seePendingReq} className='pendingRequest'>{this.state.pendingRequest} </div> : ''}
             <br/>

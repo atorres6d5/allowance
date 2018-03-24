@@ -28,6 +28,7 @@ class ViewRequest extends Component {
   }
 
   render() {
+    console.log(this.props.state)
     return (
       <div style={divStyle}>
         <table>
