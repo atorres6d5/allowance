@@ -10,11 +10,6 @@ import Allowance from "./components/allowance.js"
 import axios from 'axios'
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f526c4c795801654b475c784bf6b8eba39ccc4c5
 class App extends Component {
   constructor(props){
     super(props)
@@ -77,7 +72,7 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
           <h1>Allowance</h1>
         </div>
-        {this.state.userType === 'parent' ? <ParentView /> : <Kids user={this.state.user} requestMoney={this.requestMoney}/> }
+        {this.state.userType === 'parent' ? <ParentView user={this.state.user}/> : <Kids user={this.state.user} requestMoney={this.requestMoney}/> }
 
         {/* <Allowance /> */}
         <button className='switchUserBtn' onClick={this.switchUser}>Switch Users</button>

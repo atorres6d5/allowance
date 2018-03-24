@@ -7,9 +7,9 @@ class Kids extends Component {
     this.state={
       // name:this.props.user.accounts[0].accountNickname,
       name:this.props.user.name ? this.props.user.name : '',
-      // progress:Math.floor((this.props.user..availableBalance / 10000)*100),
+      progress:this.props.user.account ? Math.floor((this.props.user.account.availableBalance/ this.props.user.goals[0].amount) * 100) : '',
       goal:this.props.user.goals ? this.props.user.goals[0].amount: '',
-      // balance:this.props.user.accounts[0].availableBalance,
+      balance:this.props.user.account ? this.props.user.account.availableBalance : '',
       // // allowance:this.props.user.accounts[0].allowance.amount,
       allowance:this.props.user ? this.props.user.allowances[0].amount : '',
       requestMoney:false,
@@ -49,6 +49,9 @@ class Kids extends Component {
               </div>
               <div className=' progressBorder'>
                 <div className='progressBar' style={{height:this.state.progress}}></div>
+              </div>
+              <div className='balance'>
+                <p>Stash: ${this.state ? this.state.balance : ''}</p>
               </div>
             </div>
             <div className='requestMoney'>
