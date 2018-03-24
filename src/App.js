@@ -5,6 +5,7 @@ import ParentView from "./components/parentView.js"
 import accounts from './apirequest.js'
 import ViewRequest from './components/viewRequest.js'
 import HandleReq from "./components/handleReq.js"
+import AddKid from "./components/addKid.js"
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
 class App extends Component {
   constructor(props){
