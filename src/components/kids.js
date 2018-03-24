@@ -15,7 +15,7 @@ class Kids extends Component {
     }
   }
 
-  requestMoney =() =>{
+  toggleRequestMoney =() =>{
     this.setState({
       requestMoney:!this.state.requestMoney
     })
@@ -28,7 +28,10 @@ class Kids extends Component {
       <div className='kidContainer'>
 
         {this.state.requestMoney ?
-          <RequestMoney />
+          <RequestMoney
+            toggleRequestMoney={this.toggleRequestMoney}
+            requestMoney={this.props.requestMoney}
+          />
           :
           <div>
             <div className='userName'>
@@ -36,7 +39,7 @@ class Kids extends Component {
             </div>
             <div className='progressBarContainer'>
               <div className='allowance'>
-                <h3>Allowance: {this.state.allowance} </h3>
+                <h3>Allowance: ${this.state.allowance} </h3>
               </div>
               <div className='goal'>
                 <p>Goal: ${this.state.goal}</p>
@@ -46,7 +49,7 @@ class Kids extends Component {
               </div>
             </div>
             <div className='requestMoney'>
-                <button onClick={this.requestMoney}>Request Money!</button>
+                <button onClick={this.toggleRequestMoney}>Request Money!</button>
             </div>
           </div>
     }
