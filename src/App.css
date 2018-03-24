@@ -46,3 +46,8 @@ button{
 .banner h1{
   justify-content: flex-end;
 }
+.switchUserBtn{
+  background-color: grey;
+  position: absolute;
+  bottom: 0;
+}
