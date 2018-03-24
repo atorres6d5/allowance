@@ -13,6 +13,8 @@ class App extends Component {
     super(props)
     this.state={
       "user": accounts,
+      'userType':'parent'
+
     }
   }
   componentWillMount = () =>{
@@ -38,8 +40,8 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
           <h1>Allowance</h1>
         </div>
-        {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
-        <ParentView />
+        {this.state.userType === 'parent' ? <ParentView /> : <Kids user={this.state.user} requestMoney={this.requestMoney}/> }
+
         {/* <Allowance /> */}
 
       </div>
