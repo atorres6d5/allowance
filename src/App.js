@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import './App.css';
 import ParentView from "./components/parentView.js"
 import accounts from './apirequest.js'
-
-
+let capOneLogo = require ("./assets/pics/capOneLogo.png")
 class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      "user":accounts,
+      "user": accounts,
     }
   }
 
@@ -25,8 +24,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        {/* <Kids user={this.state.user}/> */}
-        <ParentView user={this.state.user} />
+
+        <div className="banner">
+          <img src={capOneLogo} alt="Capital One Logo" height="40"/>
+        </div>
+        <Kids user={this.state.user}/>
+        {/* <ParentView /> */}
       </div>
     );
   }
