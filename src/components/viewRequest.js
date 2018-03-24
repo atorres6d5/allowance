@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/viewRequest.css'
+const axios = require('axios')
 
 const divStyle = {
   marginTop: "20px",
@@ -40,6 +41,8 @@ class ViewRequest extends Component {
 
 
 
+
+
   render() {
     return (
       <div style={divStyle}>
@@ -54,6 +57,7 @@ class ViewRequest extends Component {
           <tbody>
             {this.state.request.map((req, i)=>{
               const approve = ()=>{
+
                 return console.log(req.name, req.amount, req.memo)
               }
 

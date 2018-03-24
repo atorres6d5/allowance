@@ -17,9 +17,9 @@ class Allowance extends Component {
   constructor(props){
     super(props)
     this.state = {
-      name:"Ben",
-      allowance:0,
-      payDay:1
+      name:this.props.name,
+      allowance:this.props.weeklyAllow,
+      payDay:this.props.payDay
     }
   }
 
