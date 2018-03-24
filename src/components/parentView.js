@@ -25,6 +25,9 @@ class ParentView extends Component {
     })
   }
 
+  makeKidAccount =() => {
+    // make a new account
+  }
 
   render() {
     return (
@@ -42,7 +45,7 @@ class ParentView extends Component {
                   <div key={i} className='kidAllowance'>
                     <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
-                        {/* <i className="far fa-money-bill-alt"></i> */}
+
                         <img src={pigBank} height="35"/>
                         <p> ${kid.accountBal}</p>
                     </div>
@@ -55,8 +58,10 @@ class ParentView extends Component {
                 )
               })}
             </div>
+            <div>
+              <button className='makeKidBtn' onClick={this.makeKidAccount}>New Kid Account</button>
+            </div>
           </div>
-
       }
 
       </div>
