@@ -3,6 +3,8 @@ import Kids from './components/kids.js'
 import './App.css';
 import ParentView from "./components/parentView.js"
 import accounts from './apirequest.js'
+import ViewRequest from './components/viewRequest.js'
+import HandleReq from "./components/handleReq.js"
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
 class App extends Component {
   constructor(props){
@@ -29,7 +31,9 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
         </div>
         {/* <Kids user={this.state.user}/> */}
-        <ParentView />
+        {/* <ParentView /> */}
+        {/* <ViewRequest /> */}
+        <HandleReq req={{name:'Johnny', amount:15, memo:"please, gimme gimme gimme"}}/>
       </div>
     );
   }
