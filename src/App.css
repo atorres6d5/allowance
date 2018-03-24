@@ -22,12 +22,24 @@
   font-size: large;
 }
 
+h1{
+  font-family: 'Mogra', cursive;
+    color:#306087;
+}
+
+h2{
+  color:#037fb0;
+}
 
 .banner{
   height:60px;
   /* background-color: #303e4e; */
   background-color: #eeeeee;
+  display: flex;
 }
 .banner img{
   padding: .5rem;
+}
+.banner h1{
+  justify-content: flex-end;
 }
