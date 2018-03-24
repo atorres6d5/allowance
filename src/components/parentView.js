@@ -29,6 +29,12 @@ class ParentView extends Component {
     console.log(e.target);
   }
 
+  handleClick = (callback)=>{
+    return (e)=>{
+      callback()
+    }
+  }
+
 
   render() {
     return (
@@ -43,8 +49,13 @@ class ParentView extends Component {
             <h1>${this.state.mainBalance}</h1>
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
+
+                const sendPost = ()=>{
+                  return console.log(kid)
+                }
+
                 return (
-                  <div key={i} className='kidAllowance' onClick={this.clickKid}>
+                  <div key={i} className='kidAllowance' onClick={this.handleClick(sendPost)}>
                     <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
                         {/* <i className="far fa-money-bill-alt"></i> */}
