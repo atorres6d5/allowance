@@ -16,7 +16,7 @@ class ParentView extends Component {
       // ],
       kids:this.props.user ? [this.props.user.users.children[0]] : [],
 
-      pendingRequest:[this.props.user.users.children[0].requests.length],
+      pendingRequest:this.props.user ? [this.props.user.users.children[0].requests.length] : [],
       seePending:false
     }
   }
@@ -42,6 +42,7 @@ class ParentView extends Component {
   render() {
   // this.state.user ? console.log(this.state.user.users.account.availableBalance) : '';
   console.log('strying');
+  console.log(this.state)
   this.props ? console.log(this.props) : '';
     return (
 
