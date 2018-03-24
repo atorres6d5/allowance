@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import '../css/parentView.css'
+import ViewRequest from './viewRequest.js'
+const pigBank = require('../assets/pics/pigBank.png')
 const axios = require('axios')
 
 class ParentView extends Component {
@@ -10,33 +13,51 @@ class ParentView extends Component {
       {name:"Ben Kenobi", accountBal:200, weeklyAllow:15},
       {name:"Leah SkyWalker", accountBal:75, weeklyAllow:20}
       ],
-      pendingRequest:3
-
+      pendingRequest:1,
+      seePending:false
     }
   }
 
 
+  seePendingReq = () => {
+    this.setState({
+      seePending:!this.state.seePending
+    })
+  }
+
 
   render() {
     return (
-      <div>
-        <h1 className="title">Allowance</h1>
-        <br/>
-        <h3>${this.state.mainBalance}</h3>
-        <div type="buton" style={{"background-color":"#f1f7fa"	}} >{this.state.pendingRequest} Request Pending</div>
-        <br/>
-        <div>
-          {this.state.kids.map((kid, i) => {
-            return (
-              <div key={i}>
-                <h2 style={{"background-color":"#2874af"	}}>{kid.name}</h2>
-                <p>Available Balance ${kid.accountBal}</p>
-                <p>Weekly Allowance ${kid.weeklyAllow}</p>
-              </div>
-            )
-          })}
-        </div>
 
+      <div className='parentContainer'>
+
+        {this.state.seePending ? <ViewRequest/> :
+          <div>
+            {this.state.pendingRequest ? <div onClick={this.seePendingReq} className='pendingRequest'>{this.state.pendingRequest} </div> : ''}
+            <br/>
+            <h3>Current Balance: ${this.state.mainBalance}</h3>
+            <div className='allowanceContainer'>
+              {this.state.kids.map((kid, i) => {
+                return (
+                  <div key={i} className='kidAllowance'>
+                    <h2 >{kid.name}</h2>
+                    <div className='allowanceInfo'>
+                        {/* <i className="far fa-money-bill-alt"></i> */}
+                        <img src={pigBank} height="35"/>
+                        <p> ${kid.accountBal}</p>
+                    </div>
+                    <div className='allowanceInfo'>
+                      <i className="far fa-money-bill-alt"></i>
+                      <p>${kid.weeklyAllow}</p>
+                    </div>
+
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+      }
 
       </div>
     );
