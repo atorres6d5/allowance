@@ -15,9 +15,9 @@ class ParentView extends Component {
       // {name:"Ben", accountBal:200, weeklyAllow:15, payDay:3},
       // {name:"Leah", accountBal:175, weeklyAllow:20, payDay:6}
       // ],
-      kids:this.props.user.users.children[0],
+      kids:[this.props.user.users.children[0]],
 
-      pendingRequest:this.props.user.users.children[0],
+      pendingRequest:[this.props.user.users.children[0].requests.length],
       seePending:false
     }
   }
@@ -46,7 +46,8 @@ class ParentView extends Component {
     // make new kid accoutn
   }
   render() {
-  this.state.user ? console.log(this.state.user.users.account.availableBalance) : '';
+  // this.state.user ? console.log(this.state.user.users.account.availableBalance) : '';
+  this.state.user ? console.log(this.state.kids) : '';
     return (
 
       <div className='parentContainer'>
