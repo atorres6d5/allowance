@@ -12,10 +12,6 @@ class ParentView extends Component {
 
 
 
-
-
-
-
   render() {
     console.log(this.getToken())
     return (
