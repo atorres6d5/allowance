@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/viewRequest.css'
+const axios = require('axios')
 
 const divStyle = {
   marginTop: "20px",
@@ -23,9 +24,24 @@ class ViewRequest extends Component {
     }
   }
 
-  handleClick = () => {
-    console.log("Brings up view to handle request of money");
+  handleClickYes = (e) => {
+    console.log(e.target);
   }
+
+  handleClickNo = (e) => {
+    console.log(e.target);
+  }
+
+  handleClick = (callback)=>{
+    return (e)=>{
+      callback()
+    }
+
+  }
+
+
+
+
 
   render() {
     console.log(this.props.state)
@@ -41,11 +57,20 @@ class ViewRequest extends Component {
           </thead>
           <tbody>
             {this.state.request.map((req, i)=>{
+              const approve = ()=>{
+
+                return console.log(req.name, req.amount, req.memo)
+              }
+
+            const deny = ()=>{
+                return console.log(req.name, req.amount, req.memo)
+              }
               return(
-                  <tr key={i} onClick={this.handleClick} style={requestStyle}>
+                  <tr key={i} style={requestStyle}>
                     <td>{req.name}</td>
                     <td>${req.amount}</td>
                     <td>{req.memo}</td>
+                    <td><button onClick={this.handleClick(approve)}>Approve</button><br/><button onClick={this.handleClick(deny)}>Deny</button></td>
                   </tr>
               )
             })}
