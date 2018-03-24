@@ -16,15 +16,7 @@ class ParentView extends Component {
       // ],
       kids:this.props.user ? [this.props.user.users.children[0]] : [],
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      pendingRequest:this.props.user ? this.props.user.users.children[0].requests.length : '',
-=======
       pendingRequest:[this.props.user.users.children[0].requests.length],
->>>>>>> parent of c829fcc... pully
-=======
-      pendingRequest:[this.props.user.users.children[0].requests.length],
->>>>>>> parent of c829fcc... pully
       seePending:false
     }
   }
