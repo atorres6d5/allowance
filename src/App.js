@@ -5,6 +5,7 @@ import ParentView from "./components/parentView.js"
 import accounts from './apirequest.js'
 import ViewRequest from './components/viewRequest.js'
 import HandleReq from "./components/handleReq.js"
+import AddKid from "./components/addKid.js"
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
 class App extends Component {
   constructor(props){
@@ -36,8 +37,9 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
           <h1>Allowance</h1>
         </div>
-        <Kids user={this.state.user} requestMoney={this.requestMoney}/>
+        {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
         {/* <ParentView /> */}
+        <AddKid />
       </div>
     );
   }
