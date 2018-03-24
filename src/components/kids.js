@@ -4,11 +4,12 @@ class Kids extends Component {
   constructor(props){
     super(props)
     this.state={
-      name:this.props.name,
-      progress:(this.props.account.availableBalance / this.props.goals[0].amount)*100,
-      goal:this.props.goals[0].amount,
-      balance:this.props.account.availableBalance,
-      allowance:this.props.allowance.amount,
+      name:this.props.user.accounts[0].accountNickname,
+      progress:(this.props.user.accounts[0].availableBalance / 1000)*100,
+      goal:1000,
+      // balance:this.props.user.accounts[0].availableBalance,
+      // // allowance:this.props.user.accounts[0].allowance.amount,
+      allowance:50,
     }
   }
   render() {
@@ -20,16 +21,18 @@ class Kids extends Component {
         <div className='progressBarContainer'>
           <div className='allowance'>
             <h3>Allowance: {this.state.allowance} </h3>
-
-          </div>
-          <div className='progressBar'>
-            <p>{this.state.progress}%</p>
           </div>
           <div className='goal'>
-            <p>{this.state.goal}</p>
+            <p>Goal: ${this.state.goal}</p>
           </div>
+          <div className='progressBar'>
+
+          </div>
+          {/* <div className='goal'>
+            <p>Goal: ${this.state.goal}</p>
+          </div> */}
         </div>
-        <div>
+        <div className='requestMoney'>
             <button>Request Money!</button>
         </div>
 
