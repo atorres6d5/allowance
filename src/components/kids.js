@@ -4,11 +4,11 @@ class Kids extends Component {
   constructor(props){
     super(props)
     this.state={
-      name:'Sean',
-      progress:.5,
-      goal:1000,
-      balance:0,
-      allowance:5,
+      name:this.props.name,
+      progress:(this.props.account.availableBalance/this.props.goals[0].amount)*100,
+      goal:this.props.goals[0].amount,
+      balance:this.props.account.availableBalance,
+      allowance:this.props.allowance.amount,
     }
   }
   render() {
@@ -22,7 +22,9 @@ class Kids extends Component {
             <h3>Allowance: {this.state.allowance} </h3>
 
           </div>
-          <div className='progressBar'></div>
+          <div className='progressBar'>
+            <p>{this.state.progress}%</p>
+          </div>
           <div className='goal'>
             <p>{this.state.goal}</p>
           </div>
