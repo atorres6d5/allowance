@@ -1,0 +1,15 @@
+tr{
+  background-color: #2874af;
+  border-left: #2874af
+
+}
+
+td{
+  border-left: #2874af;
+  border-right: #2874af;
+}
+
+table{
+
+  /* border-spacing: 10px; */
+}
