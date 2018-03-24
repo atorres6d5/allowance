@@ -25,6 +25,10 @@ class ParentView extends Component {
     })
   }
 
+  clickKid = (e) =>{
+    console.log(e.target);
+  }
+
 
   render() {
     return (
@@ -39,7 +43,7 @@ class ParentView extends Component {
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
                 return (
-                  <div key={i} className='kidAllowance'>
+                  <div key={i} className='kidAllowance' onClick={this.clickKid}>
                     <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
                         {/* <i className="far fa-money-bill-alt"></i> */}
