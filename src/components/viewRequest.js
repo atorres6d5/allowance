@@ -17,11 +17,13 @@ class ViewRequest extends Component {
     return (
       <div>
         <table>
-          <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th>Memo</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Memo</th>
+            </tr>
+          </thead>
           <tbody>
             {this.state.request.map((req, i)=>{
               return(
