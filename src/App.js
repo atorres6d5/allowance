@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Kids from './components/kids.js'
+import Kids from './components/kids.js'
 import './App.css';
 import ParentView from "./components/parentView.js"
 import accounts from './apirequest.js'
