@@ -31,11 +31,13 @@ class ViewRequest extends Component {
     return (
       <div style={divStyle}>
         <table>
-          <tr>
-            <th>Name</th>
-            <th>Amount</th>
-            <th style={maxWidth}>Memo</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th style={maxWidth}>Memo</th>
+            </tr>
+          </thead>
           <tbody>
             {this.state.request.map((req, i)=>{
               return(
