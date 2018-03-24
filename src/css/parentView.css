@@ -1,0 +1,39 @@
+.allowanceContainer{
+  display: flex;
+  flex-direction: row;
+}
+
+.allowanceInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.allowanceInfo p{
+  margin-left: 1rem;
+}
+
+.parentContainer{
+  text-align: center;
+}
+
+.pendingRequest{
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: red;
+  color: #f1f7fa;
+  font-size: 1.2rem;
+  padding:.5rem;
+  position: absolute;
+  top:47px;
+  right:15px;
+}
+
+.kidAllowance{
+  border:1px solid #4183c4;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1rem;
+}
