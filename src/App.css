@@ -31,6 +31,9 @@ h2{
   color:#037fb0;
 }
 
+button{
+  font-size: 1rem;
+}
 .banner{
   height:60px;
   /* background-color: #303e4e; */
@@ -42,4 +45,9 @@ h2{
 }
 .banner h1{
   justify-content: flex-end;
+}
+.switchUserBtn{
+  background-color: grey;
+  position: absolute;
+  bottom: 0;
 }
