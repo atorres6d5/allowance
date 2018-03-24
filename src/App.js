@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Kids from './components/kids.js'
+import Kids from './components/kids.js'
 import './App.css';
 import ParentView from "./components/parentView.js"
 import accounts from './apirequest.js'
@@ -28,8 +28,8 @@ class App extends Component {
         <div className="banner">
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
         </div>
-        <Kids user={this.state.user}/>
-        {/* <ParentView /> */}
+        {/* <Kids user={this.state.user}/> */}
+        <ParentView />
       </div>
     );
   }
