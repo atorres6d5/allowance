@@ -9,12 +9,15 @@ class ParentView extends Component {
   constructor(props){
     super(props)
     this.state = {
-      mainBalance:6524,
-      kids:[
-      {name:"Ben", accountBal:200, weeklyAllow:15, payDay:3},
-      {name:"Leah", accountBal:175, weeklyAllow:20, payDay:6}
-      ],
-      pendingRequest:1,
+      user:this.props.user,
+      mainBalance:this.props.user.users.account.availableBalance,
+      // kids:[
+      // {name:"Ben", accountBal:200, weeklyAllow:15, payDay:3},
+      // {name:"Leah", accountBal:175, weeklyAllow:20, payDay:6}
+      // ],
+      kids:this.props.user.users.children[0],
+
+      pendingRequest:this.props.user.users.children[0],
       seePending:false
     }
   }
@@ -27,7 +30,8 @@ class ParentView extends Component {
   }
 
   clickKid = (e) =>{
-    console.log(e.target);
+    let name = document.getElementById('kidName').innerHTML
+    console.log(name);
   }
 
   handleClick = (callback)=>{
@@ -37,7 +41,12 @@ class ParentView extends Component {
   }
 
 
+
+  makeKidAccount = () => {
+    // make new kid accoutn
+  }
   render() {
+  this.state.user ? console.log(this.state.user.users.account.availableBalance) : '';
     return (
 
       <div className='parentContainer'>
@@ -64,7 +73,7 @@ class ParentView extends Component {
                   <div key={i} className='kidAllowance' onClick={this.handleClick(sendPost)}>
                     <h2 >{kid.name}</h2>
                     <div className='allowanceInfo'>
-                        {/* <i className="far fa-money-bill-alt"></i> */}
+
                         <img src={pigBank} height="35"/>
                         <p> ${kid.accountBal}</p>
                     </div>
@@ -77,8 +86,10 @@ class ParentView extends Component {
                 )
               })}
             </div>
+            <div>
+              <button className='makeKidBtn' onClick={this.makeKidAccount}>New Kid Account</button>
+            </div>
           </div>
-
       }
 
       </div>
