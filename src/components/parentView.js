@@ -13,7 +13,6 @@ class ParentView extends Component {
 
 
   render() {
-    console.log(this.getToken())
     return (
       <div>
         <h1 className="title">Allowance</h1>

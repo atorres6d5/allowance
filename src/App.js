@@ -16,12 +16,15 @@ class App extends Component {
     localStorage.setItem("client_secret", "eb5f6rda6v0d1ld8y4fymkudo86gorrc47cj")
   }
 
+  componentWillMount = () =>{
+    this.setLocalStorage()
+  }
+
   render() {
     return (
       <div>
-
         <Kids user={this.state.user}/>
-
+        <ParentView />
       </div>
     );
   }
