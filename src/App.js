@@ -36,8 +36,8 @@ class App extends Component {
           <img src={capOneLogo} alt="Capital One Logo" height="40"/>
           <h1>Allowance</h1>
         </div>
-        <Kids user={this.state.user} requestMoney={this.requestMoney}/>
-        {/* <ParentView /> */}
+        {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
+        <ParentView />
       </div>
     );
   }
