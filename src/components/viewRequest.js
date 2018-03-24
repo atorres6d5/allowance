@@ -8,8 +8,12 @@ class ViewRequest extends Component {
     }
   }
 
-  handleClick = () => {
-    console.log("Brings up view to handle request of money");
+  handleClickYes = (e) => {
+    console.log(e.target);
+  }
+
+  handleClickNo = (e) => {
+    console.log(e.target);
   }
 
 
@@ -22,15 +26,17 @@ class ViewRequest extends Component {
               <th>Name</th>
               <th>Amount</th>
               <th>Memo</th>
+              <th>Approve</th>
             </tr>
           </thead>
           <tbody>
             {this.state.request.map((req, i)=>{
               return(
-                  <tr key={i} onClick={this.handleClick}>
+                  <tr key={i}>
                     <td>{req.name}</td>
                     <td>${req.amount}</td>
                     <td>{req.memo}</td>
+                    <td><button onClick={this.handleClickYes}>Approve</button><br/><button onClick={this.handleClickNo}>Deny</button></td>
                   </tr>
               )
             })}
