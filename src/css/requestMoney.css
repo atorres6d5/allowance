@@ -1,0 +1,37 @@
+.cancelRequest{
+  background-color: orange;
+}
+
+form{
+  display:flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+form button{
+  background-color: red;
+
+}
+
+form input{
+  height: 1.4rem;;
+  margin: .5rem;
+}
+
+form div{
+  padding: 1rem;
+}
+.formBtn{
+  padding:.7rem;
+  margin:1rem;
+  width:70vw;
+  color:#f1f7fa;
+  border-radius: 4px;
+}
+input {
+  border:2px solid #4183c4;
+}
+.sendRequest{
+  background-color: #2874af;;
+  align-self: center;
+  color:#f1f7fa;
+}

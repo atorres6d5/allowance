@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/kids.css'
+import RequestMoney from './requestMoney'
 class Kids extends Component {
   constructor(props){
     super(props)
@@ -10,33 +11,48 @@ class Kids extends Component {
       // balance:this.props.user.accounts[0].availableBalance,
       // // allowance:this.props.user.accounts[0].allowance.amount,
       allowance:50,
+      requestMoney:false,
     }
   }
 
-  componentWillMount(){
-
+  toggleRequestMoney =() =>{
+    this.setState({
+      requestMoney:!this.state.requestMoney
+    })
   }
+
+
+
   render() {
     return (
       <div className='kidContainer'>
-        <div className='userName'>
-          <h2>{this.state.name}</h2>
-        </div>
-        <div className='progressBarContainer'>
-          <div className='allowance'>
-            <h3>Allowance: {this.state.allowance} </h3>
-          </div>
-          <div className='goal'>
-            <p>Goal: ${this.state.goal}</p>
-          </div>
-          <div className=' progressBorder'>
-            <div className='progressBar' style={{height:this.state.progress}}></div>
-          </div>
-        </div>
-        <div className='requestMoney'>
-            <button>Request Money!</button>
-        </div>
 
+        {this.state.requestMoney ?
+          <RequestMoney
+            toggleRequestMoney={this.toggleRequestMoney}
+            requestMoney={this.props.requestMoney}
+          />
+          :
+          <div>
+            <div className='userName'>
+              <h2>{this.state.name}</h2>
+            </div>
+            <div className='progressBarContainer'>
+              <div className='allowance'>
+                <h3>Allowance: ${this.state.allowance} </h3>
+              </div>
+              <div className='goal'>
+                <p>Goal: ${this.state.goal}</p>
+              </div>
+              <div className=' progressBorder'>
+                <div className='progressBar' style={{height:this.state.progress}}></div>
+              </div>
+            </div>
+            <div className='requestMoney'>
+                <button onClick={this.toggleRequestMoney}>Request Money!</button>
+            </div>
+          </div>
+    }
       </div>
     );
   }
