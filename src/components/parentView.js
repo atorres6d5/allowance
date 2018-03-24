@@ -5,8 +5,8 @@ class ParentView extends Component {
   constructor(props){
     super(props)
     this.state = {
-      "accounts":[],
-
+      mainBalance:6524,
+      kids:[{name:"Ben Kenobi", accountBal:200, weeklyAllow:15}, {name:"Leah SkyWalker", accountBal:75, weeklyAllow:20}]
     }
   }
 
@@ -17,12 +17,21 @@ class ParentView extends Component {
       <div>
         <h1 className="title">Allowance</h1>
         <br/>
-        {/* <h3>Account Balance:{this.state.accounts[0].availableBalance}</h3>
-        <ul>
-          {this.state.map((account, index) => {
-            return <li key={index}></li>
+        <h3>${this.state.mainBalance}</h3>
+        <br/>
+        <div>
+          {this.state.kids.map((kid, i) => {
+            return (
+              <div key={i}>
+                <h2  type="button" style={{"background-color":"#222d5b"	}}>{kid.name}</h2>
+                <p>Available Balance ${kid.accountBal}</p>
+                <p>Weekly Allowance ${kid.weeklyAllow}</p>
+              </div>
+            )
           })}
-        </ul> */}
+        </div>
+
+
       </div>
     );
   }
