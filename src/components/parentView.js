@@ -23,7 +23,7 @@ class ParentView extends Component {
           {this.state.kids.map((kid, i) => {
             return (
               <div key={i}>
-                <button  type="button">{kid.name}</button>
+                <h2  type="button" style={{"background-color":"#222d5b"	}}>{kid.name}</h2>
                 <p>Available Balance ${kid.accountBal}</p>
                 <p>Weekly Allowance ${kid.weeklyAllow}</p>
               </div>
