@@ -60,11 +60,11 @@ class ViewRequest extends Component {
             {this.state.request.map((req, i)=>{
               const approve = ()=>{
 
-                return console.log(req.name, req.amount, req.memo)
+                axios.patch(`localhost:3000/api/requests/${req.id}`, {status: "accepted"})
               }
 
-            const deny = ()=>{
-                return console.log(req.name, req.amount, req.memo)
+              const deny = ()=>{
+                axios.patch(`localhost:3000/api/requests/${req.id}`, {status: "denied"})
               }
               return(
                   <tr key={i} style={requestStyle}>
