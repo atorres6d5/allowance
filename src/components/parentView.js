@@ -42,12 +42,13 @@ class ParentView extends Component {
 
       <div className='parentContainer'>
 
-        {this.state.seePending ? <ViewRequest/> :
+        {this.state.seePending ? <ViewRequest state={this.props.state}/> :
           <div>
             {this.state.pendingRequest ? <div onClick={this.seePendingReq} className='pendingRequest'>{this.state.pendingRequest} </div> : ''}
             <br/>
             <h3>Current Parent Balance:</h3>
             <h1>${this.state.mainBalance}</h1>
+            <h3><i class="fas fa-users" style={{fontSize:"2em"}}></i></h3>
             <div className='allowanceContainer'>
               {this.state.kids.map((kid, i) => {
 

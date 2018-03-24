@@ -7,6 +7,7 @@ import ViewRequest from './components/viewRequest.js'
 import HandleReq from "./components/handleReq.js"
 import AddKid from "./components/addKid.js"
 import Allowance from "./components/allowance.js"
+
 let capOneLogo = require ("./assets/pics/capOneLogo.png")
 
 
@@ -31,8 +32,6 @@ class App extends Component {
     localStorage.setItem("client_secret", "eb5f6rda6v0d1ld8y4fymkudo86gorrc47cj")
   }
 
-
-
   render() {
     return (
       <div>
@@ -42,14 +41,12 @@ class App extends Component {
           <h1>Allowance</h1>
         </div>
         {/* <Kids user={this.state.user} requestMoney={this.requestMoney}/> */}
-        <ParentView />
-
+        <ParentView state={this.state}/>
         {/* <Allowance /> */}
 
       </div>
     );
   }
-
 }
 
 export default App;
