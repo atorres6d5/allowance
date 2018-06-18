@@ -1,12 +1,12 @@
-Anglehack Hackathon at Capital One Seattle
+# Anglehack Hackathon at Capital One Seattle
+----
 
-Hackathon Challenge
+### Capital One DevExchange Challenge:
 
-CHALLENGES
-Capital One DevExchange Challenge:
 Create the most innovative product that provides value to the company producing the app, the customer, and/or Capital One by utilizing one or more of the below APIs.
 
-Featured API: Money Movement
+Featured API:
+Money Movement
 APIs: Bank Account Starter, Credit Offers, Rewards
 
 Sponsor Challenges:
@@ -30,7 +30,7 @@ Features:
 
 This is a practical family-centered savings educational tool app that gives parents the ability to give their kids allowances and monitor savings goals.
 
-![](https://github.com/atorres6d5/allowance/blob/master/ask.png?raw=true) 
+![](https://github.com/atorres6d5/allowance/blob/master/ask.png?raw=true)
 
 
 
@@ -38,7 +38,7 @@ This is a practical family-centered savings educational tool app that gives pare
 
 Our idea was to make a mobile app that for parents to give an allowance to their kids and help teach saving habits early. A Parent can make a new account for any of their children. The ability to make a Transfer of money at a moments notice is built in.
 
-[Image]
+![](./status.png)
 
 
 This Was made for the Capone DevXchange Hackathon
