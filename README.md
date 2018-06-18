@@ -30,9 +30,9 @@ Features:
 
 This is a practical family-centered savings educational tool app that gives parents the ability to give their kids allowances and monitor savings goals.
 
-![ask](./ask.png | height=400px)
+![](https://github.com/atorres6d5/allowance/blob/master/ask.png?raw=true) 
 
-<img src="./ask.png" style={max-height:400px} />
+
 
 
 
